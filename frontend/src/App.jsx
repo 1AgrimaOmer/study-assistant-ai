@@ -77,20 +77,20 @@ export default function App() {
     setLastInput(userInput);
 
     try {
-      fetch("https://study-assistant-ai-6dj4.onrender.com/generate", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ input: userInput }),
-      });
+     const response = await fetch("https://study-assistant-ai-6dj4.onrender.com/generate", {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ input: userInput }),
+});
 
-      if (!response.ok) {
-        const errorBody = await response.json().catch(() => ({}));
-        throw new Error(errorBody.error || `Server responded with status ${response.status}`);
-      }
+if (!response.ok) {
+  const errorBody = await response.json().catch(() => ({}));
+  throw new Error(errorBody.error || `Server responded with status ${response.status}`);
+}
 
-      const result = await response.json();
+const result = await response.json();
 
       // Race condition check: Ignore response if a new request has already been kicked off
       if (currentRequestId !== requestIdRef.current) {
