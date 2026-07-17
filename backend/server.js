@@ -13,6 +13,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
+
 // ✅ Rate Limiter
 const limiter = rateLimit({
   windowMs: 60 * 1000,
