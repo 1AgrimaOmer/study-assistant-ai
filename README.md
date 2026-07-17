@@ -1,5 +1,5 @@
 
-**Delpoymnet Url =study-assistant-x8vi5ofwq-1agrimaomers-projects.vercel.app**
+
 
 # StudySphere AI - Interactive Study Assistant
 A full-stack, visually rich Study Assistant application that parses Gemini AI outputs into interactive learning components. It provides a non-chatbot interface where users paste notes or topics to generate 3D flashcards and customizable quizzes.
