@@ -77,7 +77,7 @@ export default function App() {
     setLastInput(userInput);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/generate`, {
+      fetch("https://study-assistant-ai-6dj4.onrender.com/generate", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
